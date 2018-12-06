@@ -1,2 +1,2 @@
 server: ./node_modules/.bin/nodemon app.js
-webpack: npm run dev
+webpack: npm run production

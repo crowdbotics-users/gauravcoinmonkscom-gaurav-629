@@ -15,6 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "DATABASE_URL"
+    "use_env_variable": "mysql://b01fc8c17231da:afd5c52b@us-cdbr-iron-east-01.cleardb.net/heroku_df4533e7b99ae8e?reconnect=true",
+    "CLEARDB_DATABASE_URL": "mysql://b01fc8c17231da:afd5c52b@us-cdbr-iron-east-01.cleardb.net/heroku_df4533e7b99ae8e?reconnect=true"
   }
 }

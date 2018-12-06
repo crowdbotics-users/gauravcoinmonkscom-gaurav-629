@@ -45,7 +45,7 @@ In your terminal run the following:
 
 ```shell
 #on first run:
-heroku create MY_APP && heroku addons:add heroku-postgresql
+heroku create MY_APP_001 && heroku addons:create cleardb:ignite
 heroku plugins:install heroku-config
 #every other run:
 git push heroku master
