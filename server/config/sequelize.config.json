@@ -1,21 +1,20 @@
 {
   "development": {
-    "username": "root",
-    "password": "www",
-    "database": "cryptofolio",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "failsafe_bs4",
     "host": "127.0.0.1",
-    "port": "3306",
-    "dialect": "mysql"
+    "port": "5432",
+    "dialect": "postgres"
   },
   "test": {
-    "username": "root",
-    "password": "www",
-    "database": "cryptofolio",
+    "username": "champion",
+    "password": "",
+    "database": "failsafe_bs4_test",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
-    "use_env_variable": "mysql://b01fc8c17231da:afd5c52b@us-cdbr-iron-east-01.cleardb.net/heroku_df4533e7b99ae8e?reconnect=true",
-    "CLEARDB_DATABASE_URL": "mysql://b01fc8c17231da:afd5c52b@us-cdbr-iron-east-01.cleardb.net/heroku_df4533e7b99ae8e?reconnect=true"
+    "use_env_variable": "DATABASE_URL"
   }
 }
