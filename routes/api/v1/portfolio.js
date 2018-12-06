@@ -46,8 +46,24 @@ router.post('/addcoin', function(req, res, next) {
       buyingPrice: req.body.buyingPrice,
       currentPrice :entry.currentPrice
   })
-  .then(function(user) {
-      //do something here
+  .then(function(portfolio) {
+      res.redirect('/dashboard');
+  })
+  .catch(function(err) {
+    console.error('Failed to add a coin');
+    return res.status(400).send(err.errors ? err.errors : err);
+  });
+  }).catch(function(err){
+    models.portfolio.create({
+      userId : userId, 
+      coinName: coinName,
+      createdAt: new Date(),
+      exchangeId: 1,
+      exchangeName:"Bittrex",  
+      buyingPrice: req.body.buyingPrice,
+      currentPrice :100
+  })
+  .then(function(portfolio) {
       res.redirect('/dashboard');
   })
   .catch(function(err) {
