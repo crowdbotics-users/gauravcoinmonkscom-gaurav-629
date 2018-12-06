@@ -4,7 +4,7 @@ var Footer = React.createClass({
   render: function() {
     return (
       <div id="footer" className="container">
-        <div className="row">
+        {/* <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-8 col-lg-8">
             <h2>About</h2>
             <p>crypto-portfolio-206 is a Full-Stack Javascript for an easy starting point with SequelizeJS, ExpressJS, PassportJS, ReactJS and NodeJS based applications.</p>
@@ -14,7 +14,7 @@ var Footer = React.createClass({
             <h2>Info</h2>
             <p>Made with <i className="fa fa-heart" aria-hidden="true"></i> at <a href="https://crowdbotics.com" target="_blank">Crowdbotics</a></p>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

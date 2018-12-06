@@ -19,7 +19,7 @@ var app = express();
 var BUILD_DIR = path.resolve(__dirname, './client/public/build');
 var APP_DIR = path.resolve(__dirname, './client/app');
 var config = require('./server/config/config.js');
-
+var cronjob =  require('./server/cron/cronjob')
 // Initialize pretty-error
 var pe = new PrettyError();
 pe.start();
@@ -68,6 +68,7 @@ models.sequelize.sync({
   var server = http.createServer(app);
   server.listen(app.get('port'), function () {
     console.log('App is listening on port ' + config.port + '! Visit localhost:' + config.port + ' in your browser.');
+    cronjob.registerCron();
   });
 
   // Reload code here
@@ -79,3 +80,6 @@ models.sequelize.sync({
   });
 
 });
+
+
+

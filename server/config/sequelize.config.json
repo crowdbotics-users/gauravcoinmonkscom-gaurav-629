@@ -1,18 +1,18 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "failsafe_bs4",
+    "username": "root",
+    "password": "www",
+    "database": "cryptofolio",
     "host": "127.0.0.1",
-    "port": "5432",
-    "dialect": "postgres"
+    "port": "3306",
+    "dialect": "mysql"
   },
   "test": {
-    "username": "champion",
-    "password": "",
-    "database": "failsafe_bs4_test",
+    "username": "root",
+    "password": "www",
+    "database": "cryptofolio",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "production": {
     "use_env_variable": "DATABASE_URL"

@@ -70,8 +70,8 @@ function signInUser(req, res, error, user){
   if (!user) { return res.status(401).json({message: 'Failed to sign in!'}); }
 
   sessionHelper.setCurrentUserId(req, res, user.id);
-
-  res.status(200).json(user);
+  res.redirect('/dashboard');
+  // res.status(200).json(user);
 }
 
 router.get('/', function(req, res){
@@ -79,7 +79,7 @@ router.get('/', function(req, res){
   if(userId) {
     models.user.findAll()
     .then(function(allUsers) {
-      res.status(200).json(allUsers);
+      res.redirect('/dashboard');
     });
   } else {
     res.status(403).json({ errors: { user: ["must_be_signed_in"] } });
@@ -115,9 +115,7 @@ router.post('/signup', function(req, res, next) {
     //     });
     //   }
     // });
-      res.send({
-          message: 'Signup Successful! You can login with your credentials now.'
-        });
+    res.redirect('/');
   })
   .catch(function(err) {
     console.error('Failed to create a new user');
@@ -128,7 +126,7 @@ router.post('/signup', function(req, res, next) {
 router.get('/logout', function(req, res) {
   req.session.destroy();
   sessionHelper.clearCurrentUserId(req, res);
-  res.status(200).end();
+  res.redirect('/');
 });
 
 router.get('/current', function(req, res) {
