@@ -25,8 +25,8 @@
   </head>
   <body>
   <div class="container-fluid">
-      <div style="margin-bottom:3rem">
-          <label id="home" style="text-align: center;" class="h4">Crypto Portfolio</label>
+      <div style="margin-bottom:3rem;text-align: center;margin-top: 1rem;">
+          <label id="home" style="text-align: center;font-family: 'Kaushan Script', cursive;" class="h2">Crypto Portfolio</label>
           <button id="logout" type="button" class="btn btn-info" style="float: right;">Logout</button>
       </div>
     <div class="card" style="margin-top: 2rem; margin-bottom: 2rem;">
@@ -40,16 +40,16 @@
         <div class="col-md-4">
             <label class ="h6" for="coinName">Select Coin</label>
             <select style = "margin-bottom: 1rem;" id= "coinName" name ="coinName" class="form-control selectpicker" required="required">
-                <option>Bitcoin</option>
+                <option >Bitcoin</option>
                 <option>Ethereum</option>
             </select>             
         </div>
         <div class="col-md-4 ">
-            <label class ="h6" for="buyingPrice">Buy price</label>
-            <input type="number" class="form-control" id="buyingPrice" name ="buyingPrice"  required="required" placeholder="Enter Buy Price in $$$">        
+            <label style = "margin-bottom: 0.8rem;" class ="h6" for="buyingPrice">Buy price</label>
+            <input style="height: 3rem;" type="number" class="form-control" id="buyingPrice" name ="buyingPrice"  required="required" placeholder="Enter Buy Price in $$$">        
         </div>
         <div class="col-md-4 " style="text-align:center;">
-            <button style="margin-top: 4%"  type="submit" class="btn btn-success btn-send btn-lg" role="button">Add Coin</button>
+            <button style="margin-top: 8%"  type="submit" class="btn btn-success btn-send btn-lg" role="button">Add Coin</button>
         </div>
         </div>
         </div>
@@ -57,33 +57,34 @@
       </div>
 
       <!-- <div class="alert alert-primary" role="alert"> -->
-        <div class="card">  
-        <label class="h5">Your Total worth</label>
-        </div>
-      <!-- </div> -->
-      <div class="card">
-      <div class="row border" style="text-align: center;">
-        <div class="col-md-4 border">
+        <div class="card" style="margin-bottom: 1rem;margin-top: 1rem;">  
+      <div style="margin: 1rem 1rem 1rem 1rem;">
+          <label class="h5">Your Total worth</label>
+      </div>
+      <div class="row" style="text-align: center;">
+        <div class="col-md-4 ">
           <label class="h5">Total Investment</label>
           <br>
           <label id="totalInvestment"></label>
         </div>
-        <div class="col-md-4 border">
+        <div class="col-md-4 ">
         <label class="h5">Current portfolio</label>
             <br>
             <label id="currentPortfolio"></label>
           </div>
-        <div class="col-md-4 border">
+        <div class="col-md-4 ">
             <label class="h5">Total change</label>
             <br>
             <label id="change"></label>
           </div>
       </div>
-      </div>
+    </div>
+
       <!-- <div class="alert alert-primary" role="alert"> -->
         <div class="card"> 
+          <div style="margin: 1rem 1rem 1rem 1rem;">
         <p class="h5">Your Coins</p>
-           
+           </div>
       <div class="row">
         <div class="col-md-12 border">
           <table class="table">
@@ -92,22 +93,22 @@
                 <th>
                   #
                 </th>
-                <th>
+                <th class="h6">
                   Coin Name
                 </th>
-                <th>
+                <th class="h6">
                   Buy Price
                 </th>
-                <th>
+                <th class="h6">
                   Current Price
                 </th>
-                <th>
+                <th class="h6">
                     Profit/Loss
                 </th>
-                <th>
+                <th class="h6">
                     Profit/Loss %
                 </th>
-                <th>
+                <th class="h6">
                     Manage
                 </th>
               </tr>
@@ -164,7 +165,7 @@ function addRow(data, i){
 var row = '<tr>';
 var col = '';
 col += '<td>'+ (i + 1) +'</td>';
-col += '<td><a href="'+ getHost() + '/' +data["coinName"].toLowerCase() + '">'+data["coinName"]+ '</a></td>';
+col += '<td><a style= "color: blue; " href="'+ getHost() + '/' +data["coinName"].toLowerCase() + '">'+data["coinName"]+ '</a></td>';
 col += '<td>'+data["buyingPrice"]+'</td>';
 col += '<td>'+data["currentPrice"]+'</td>';
 col += '<td>'+calculateLossProfit(data["buyingPrice"] ,data["currentPrice"] )+'</td>';
@@ -252,6 +253,7 @@ function getHost(){
 $('#home').click(function(){
   location.href = getHost();
 })
+
 </script>
 </body>
 </html>
